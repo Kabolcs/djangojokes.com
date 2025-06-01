@@ -8,6 +8,7 @@ urlpatterns = [
 
     # User Management
     path('account/', include('allauth.urls')),
+    path('account/', include('users.urls')),
 
     # Local Apps
     path('jobs/', include('jobs.urls')),
