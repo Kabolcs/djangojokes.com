@@ -14,7 +14,7 @@ class JokeForm(ModelForm):
                 attrs={'cols': 80, 'rows': 2, 'placeholder': 'Make it funny!'}
             )
         }
-    help_texts = {
-        'question': 'No dirty jokes please.',
-        'tags': 'Use Ctrl-click to select multiple tags.'
-}
+        help_texts = {
+            'question': 'No dirty jokes please.',
+            'tags': 'Use Ctrl-click to select multiple tags.'
+        }

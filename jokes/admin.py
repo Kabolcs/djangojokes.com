@@ -2,18 +2,6 @@ from django.contrib import admin
 
 from .models import Category, Joke, JokeVote, Tag
 
-
-@admin.register(Joke)
-class JokeAdmin(admin.ModelAdmin):
-    model = Joke
-    list_display = ['question', 'created', 'updated']
-
-    def get_readonly_fields(self, request, obj=None):
-        if obj: # editing an existing object
-            return ('slug','created', 'updated')
-
-        return ()
-    
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     model = Category
@@ -23,17 +11,20 @@ class CategoryAdmin(admin.ModelAdmin):
         if obj: # editing an existing object
             return ('slug', 'created', 'updated')
         return ()
-    
-@admin.register(Tag)
-class TagAdmin(admin.ModelAdmin):
-    model = Tag
-    list_display = ['tag', 'created', 'updated']
+
+
+@admin.register(Joke)
+class JokeAdmin(admin.ModelAdmin):
+    model = Joke
+    list_display = ['question', 'created', 'updated']
 
     def get_readonly_fields(self, request, obj=None):
         if obj: # editing an existing object
             return ('slug', 'created', 'updated')
+
         return ()
-    
+
+
 @admin.register(JokeVote)
 class JokeVoteAdmin(admin.ModelAdmin):
     model = JokeVote
@@ -42,4 +33,16 @@ class JokeVoteAdmin(admin.ModelAdmin):
     def get_readonly_fields(self, request, obj=None):
         if obj: # editing an existing object
             return ('created', 'updated')
+        return ()
+
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    model = Tag
+    list_display = ['tag', 'created', 'updated']
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj: # editing an existing object
+            return ('slug', 'created', 'updated')
         return ()
