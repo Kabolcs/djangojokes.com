@@ -115,7 +115,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
-DEFAULT_FROM_EMAIL = 'admin@example.com'
+DEFAULT_FROM_EMAIL = 'b.szabbi@gmail.com'
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, even w/o `allauth`
@@ -124,6 +124,7 @@ AUTHENTICATION_BACKENDS = (
     # `allauth`-specific auth methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 )
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
