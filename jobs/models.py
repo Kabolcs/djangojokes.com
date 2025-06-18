@@ -27,6 +27,7 @@ class Job(models.Model):
 
 
 class Applicant(models.Model):
+    id = models.BigAutoField(primary_key=True)
     EMPLOYMENT_TYPES = (
         (None, '--Please choose--'),
         ('ft', 'Full-time'),
