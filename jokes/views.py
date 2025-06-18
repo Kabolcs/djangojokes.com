@@ -41,11 +41,11 @@ class JokeDeleteView(UserPassesTestMixin, DeleteView):
 
 class JokeDetailView(DetailView):
     model = Joke
-
+    
 
 class JokeListView(ListView):
     model = Joke
-
+    paginate_by = 10
 
 class JokeUpdateView(SuccessMessageMixin, UserPassesTestMixin, UpdateView):
     model = Joke
