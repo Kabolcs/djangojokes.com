@@ -26,7 +26,9 @@ SECRET_KEY = 'bi5j3yd=1&5i4d^0d)f*a8sk0kwmpdghq#3$8tm48gvbpvnb*h'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+INTERNAL_IPS = [ # Necessary for the Debug Toolbar
+    '127.0.0.1',
+]
 
 # Application definition
 
@@ -48,6 +50,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'private_storage',
+    'debug_toolbar',
 
     # Local apps
     'common.apps.CommonConfig',
@@ -64,6 +67,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware', # The Debug Toolbar
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
